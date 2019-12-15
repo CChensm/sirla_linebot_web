@@ -1,21 +1,23 @@
-<!-- views/pages/index.ejs -->
+<!-- views/index.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <%- include('layout/head'); %>
-</head>
+
 <body class="container">
-    <header>
-            <%- include('layout/header'); %>
-    </header>
+    
+    <%- include('layout/header'); %>
+    
     <main>
         <div class="jumbotron">
-        <%- include('hero'); %>
+            <%- include('login'); %>
         </div>
-    </main>
-    <footer>
-            <%- include('layout/footer'); %>
-    </footer>
+    </main>  
+
+    <a href="/courses_management">courses</a>
+    
+    <%- include('layout/footer'); %>
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('layout/head'); %>
+
+<body class="container">
+    
+    <%- include('layout/header'); %>
+    
+    <main>
+        <div class="jumbotron">
+                <h1><%= title %></h1>
+                <ul>
+                <% for (var i=0; i<courses.length; i++) {%>
+                        <li><%= courses[i].name %> / <%= courses[i].time %> / <%= courses[i].lecturer %></li> 
+                <% } %>
+                </ul>
+        </div>
+    </main>  
+    
+    <%- include('layout/footer'); %>
+
+</body>
+</html>
