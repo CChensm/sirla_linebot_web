@@ -5,7 +5,7 @@ module.exports = function (app) {
     
     
     app.get('/', (req, res) => {
-        res.render('index.ejs', courses_info )
+        res.render('index.ejs')
     })
     // 
     app.use('/courses_management', require('./courses_management'));
