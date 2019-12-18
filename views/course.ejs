@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <%- include('layout/head'); %>
+</head>
+<body class="container">
+    
+    <%- include('layout/header'); %>
+    
+    <main>
+        <h1>課程管理</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>課程名稱</th>
+                    <th>課程時間</th>
+                    <th>講者</th>
+                </tr>
+                <% for (let j=0; j<info.length; j++) {%>
+                <tr>
+                    <th scope="col"><%= info[j].course %> </th>
+                    <th scope="col"><%= info[j].time %> </th>
+                    <th scope="col"><%= info[j].lecturer %> </th>
+                </tr>
+                <% } %>
+                
+            </thead>
+        </table>
+    </main>
+    
+    <%- include('layout/footer'); %>
+   
+</body>
+</html>
