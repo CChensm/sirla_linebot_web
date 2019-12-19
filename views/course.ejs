@@ -2,6 +2,7 @@
 
 <head>
     <%- include('layout/head'); %>
+    <title><%= title %></title>
 </head>
 <body class="container">
     
@@ -9,26 +10,32 @@
     
     <main>
         <h1>課程管理</h1>
+        <div class="row">
+                <a href="/courses/add" type="button" class="btn btn-primary">新增課程</a>
+        </div>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
+                    <th>_id</th>
                     <th>課程名稱</th>
                     <th>課程時間</th>
                     <th>講者</th>
                 </tr>
-                <% for (let j=0; j<info.length; j++) {%>
+                <% courses.forEach(function( course ){ %>
                 <tr>
-                    <th scope="col"><%= info[j].course %> </th>
-                    <th scope="col"><%= info[j].time %> </th>
-                    <th scope="col"><%= info[j].lecturer %> </th>
+                    <th scope="col"><%= course._id %> </th>
+                    <th scope="col"><%= course.course %> </th>
+                    <th scope="col"><%= course.time %> </th>
+                    <th scope="col"><%= course.lecturer %> </th>
+                    <th><a href="courses/del?id=<%= course.id %>">删除</a> | <a href="courses/update?id=<%= course.id %>">修改</a></th>
                 </tr>
-                <% } %>
+                <% }); %>
                 
             </thead>
         </table>
     </main>
     
     <%- include('layout/footer'); %>
-   
+
 </body>
 </html>

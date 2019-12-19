@@ -8,7 +8,6 @@ module.exports = function (app) {
         res.render('index.ejs')
     })
 
-    app.use('/course', require('./course'));
     app.use('/login', require('./login'));
     app.use('/student', require('./student'));
 
